@@ -1,31 +1,66 @@
 import Home from './home';
-
+import Contact from './contact';
 import barba from '@barba/core';
-import barbaCss from '@barba/css';
-
-import _ from '../scss/main.scss';
+import GSAP from 'gsap';
+import  '../scss/main.scss';
 
 
 
 class App{
     constructor(){
         this.pages = {
-            home : new Home()
+            home : new Home(),
+            contact : new Contact()
         }
         this.createAjaxNavigation()
+        this.createReRender()
     }
     createAjaxNavigation(){
-        barba.use(barbaCss) 
+       const easeIn = (container,done)=> {
+            return GSAP.to(container, {
+                autoAlpha: 0,
+                duration: 1,
+                ease: 'none',
+                onComplete: ()=> done()
+            })
+        }
+
+        const  easeOut = (container) => {
+
+            return GSAP.from(container, {
+                autoAlpha: 0,
+                duration: 1,
+                ease: 'none',
+            })
+        }
+
         barba.init({
-            transitions: [{
-                once: () => {
-                    console.log('once');
+                transitions: [
+                {
+                once({ next }) {
+                     easeOut(next.container);
                 },
-                beforeLeave: () => {
-                    console.log('beforeLeave');
+                leave({ current }) {
+                    const done = this.async();
+                    easeIn(current.container, done);
+                },
+                enter({ next }) {
+                     easeOut(next.container);
                 }
-            }]
-        });
+                }
+            ],
+            
+        })
+    }
+    createReRender(){
+        
+        barba.hooks.before(() => {
+        })
+    
+        barba.hooks.after(() => {
+            this.pages.home.createReRender() 
+            this.pages.contact.createReRender() 
+        })
     }
 }
 

@@ -4,7 +4,6 @@ const path =  require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const rspack  = require('@rspack/core')
 const { ProvidePlugin } = require('@rspack/core');
-
 const pugPages = glob.sync('src/views/pages/*.pug')
 
 
@@ -74,7 +73,6 @@ module.exports = {
         new rspack.CssExtractRspackPlugin({
             filename: "css/[name].css", 
         }),
-
         
         new rspack.CopyRspackPlugin({
             patterns: [

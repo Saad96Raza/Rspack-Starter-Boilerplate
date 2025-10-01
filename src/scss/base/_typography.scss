@@ -49,34 +49,46 @@
 
 
 
-
-.link {
-  @apply text-[]; 
+.text-xxl{
+    @apply leading-none; 
 }
 
-.xl-font,
-.lg-font {
+
+.text-xl{
     @apply text-[]; 
 }
 
-.md-font{
+
+
+.text-lg {
     @apply text-[]; 
 }
 
-.sm-font {
+
+.text-md{
     @apply text-[]; 
 }
 
-.body-font {
+.text-sm {
+    @apply text-[]; 
+}
+
+.text-body {
     @apply text-[];  
 }
-
-.highlight-font,
-.field-font {
+.text-input {
    @apply text-[]; 
 }
 
+.text-highlight {
+   @apply text-[]; 
+}
 
-.direction {
+.text-link {
+  @apply text-[]; 
+}
+
+
+.text-direction {
    @apply text-[]; 
 }

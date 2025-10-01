@@ -1,26 +1,25 @@
 /** @type {import('tailwindcss').Config} */
-import   fluid ,{ screens, fontSize } from 'fluid-tailwind'
-import daisyui from 'daisyui'
+// const fluid = require('fluid-tailwind')
+import { Fluid } from './src/apps/extra/math'
+const daisyui = require('daisyui')
 
 module.exports = {
   content: ["./src/**/*.{html,js,pug}"],
   theme: {
-    screens,
-    fontSize,
     container: {
       center: true,
+      screens: {
+        DEFAULT: '100%', 
+        xl: '1440px',    
+      },
     },
     extend: {
       fontSize: {        
-        /** FontSize in PX */
-        'class-name': ['font-size-in-rem', { lineHeight: 'line-height-in-rem' }], 
-        'class-name': ['font-size-in-rem', { lineHeight: 'line-height-in-rem' }], 
-    
+       xxl: [Fluid(2, 106)], 
       },      
     },
   },
   plugins: [
-    fluid,
     daisyui
   ],
   corePlugins: {
