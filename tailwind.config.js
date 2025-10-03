@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-// const fluid = require('fluid-tailwind')
+/**
+ * fluid function
+ */
 import { Fluid } from './src/apps/extra/math'
 const daisyui = require('daisyui')
 
