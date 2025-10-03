@@ -15,7 +15,14 @@ module.exports = {
     },
     extend: {
       fontSize: {        
-       xxl: [Fluid(2, 106)], 
+        xxl: [Fluid(4, 200)], 
+        xl: [], 
+        lg: [], 
+        md: [], 
+        sm: [], 
+        body: [], 
+        input: [], 
+        highlight: [], 
       },      
     },
   },

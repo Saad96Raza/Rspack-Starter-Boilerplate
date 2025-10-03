@@ -55,40 +55,39 @@
 
 
 .text-xl{
-    @apply text-[]; 
+   @apply leading-none; 
 }
 
 
 
 .text-lg {
-    @apply text-[]; 
+   @apply leading-none;  
 }
 
 
 .text-md{
-    @apply text-[]; 
+    @apply leading-none;  
 }
 
 .text-sm {
-    @apply text-[]; 
+    @apply leading-none; 
 }
 
 .text-body {
-    @apply text-[];  
+    @apply leading-none;   
 }
 .text-input {
-   @apply text-[]; 
+   @apply leading-none; 
 }
 
 .text-highlight {
-   @apply text-[]; 
+   @apply leading-none; 
 }
 
 .text-link {
-  @apply text-[]; 
+ @apply leading-none;  
 }
 
-
 .text-direction {
-   @apply text-[]; 
+   @apply leading-none; 
 }
