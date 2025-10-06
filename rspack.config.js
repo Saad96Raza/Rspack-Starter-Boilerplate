@@ -1,9 +1,8 @@
-const glob = require('glob');
-
+const glob = require('glob')
 const path =  require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const rspack  = require('@rspack/core')
-const { ProvidePlugin } = require('@rspack/core');
+const { ProvidePlugin } = require('@rspack/core')
 const pugPages = glob.sync('src/views/pages/*.pug')
 
 

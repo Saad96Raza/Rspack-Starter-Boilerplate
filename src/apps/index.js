@@ -1,7 +1,8 @@
 import Home from './home';
 import Contact from './contact';
 import barba from '@barba/core';
-import GSAP from 'gsap';
+import GSAP from 'gsap/src/index'
+
 import  '../scss/main.scss';
 
 
