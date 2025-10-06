@@ -2,19 +2,21 @@ import Home from './home';
 import Contact from './contact';
 import barba from '@barba/core';
 import GSAP from 'gsap/src/index'
-
 import  '../scss/main.scss';
 
 
 
 class App{
     constructor(){
-        this.pages = {
-            home : new Home(),
-            contact : new Contact()
-        }
-        this.createAjaxNavigation()
-        this.createReRender()
+        $(()=>{
+            this.pages = {
+                home : new Home(),
+                contact : new Contact()
+            }
+            this.createAjaxNavigation()
+            this.createReRender()
+        })   
+        
     }
     createAjaxNavigation(){
        const easeIn = (container,done)=> {
@@ -63,6 +65,7 @@ class App{
             this.pages.contact.createReRender() 
         })
     }
+
 }
 
 new App()

@@ -1,11 +1,8 @@
 const glob = require('glob')
 const path =  require('path')
+const {rspack ,ProvidePlugin}  = require('@rspack/core')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const rspack  = require('@rspack/core')
-const { ProvidePlugin } = require('@rspack/core')
 const pugPages = glob.sync('src/views/pages/*.pug')
-
-
 module.exports = {
     mode:'development',
     entry : path.resolve(__dirname, "src/apps/index.js"),
@@ -27,7 +24,7 @@ module.exports = {
         },
         compress: true,
         hot:false,
-        port: 2000,
+        port: 3000,
     },
     devtool: false, 
     module:{
@@ -84,8 +81,7 @@ module.exports = {
             'window.jQuery': 'jquery', 
         }),
 
-        ...pugPages.map((file) => {
-       
+        ...pugPages.map((file) => {       
             const pageName = path.basename(file, '.pug')
             return new HtmlWebpackPlugin({
               title: pageName.charAt(0).toUpperCase() + pageName.slice(1),
@@ -94,10 +90,7 @@ module.exports = {
               inject: 'body',
               chunks: ['main'],
             })
-            
         }),
-
- 
     ],
     
 }
