@@ -1,21 +1,22 @@
+import 'core-js/stable'
+import 'regenerator-runtime/runtime'
+
 import Home from './home';
 import Contact from './contact';
 import barba from '@barba/core';
-import GSAP from 'gsap/src/index'
-import  '../scss/main.scss';
+import style from '../scss/main.scss';
 
 
 
 class App{
     constructor(){
-        $(()=>{
             this.pages = {
                 home : new Home(),
                 contact : new Contact()
             }
             this.createAjaxNavigation()
             this.createReRender()
-        })   
+        
         
     }
     createAjaxNavigation(){

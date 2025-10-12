@@ -1,8 +1,12 @@
+
+
 const glob = require('glob')
 const path =  require('path')
 const {rspack ,ProvidePlugin}  = require('@rspack/core')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const pugPages = glob.sync('src/views/pages/*.pug')
+
+
 module.exports = {
     mode:'development',
     entry : path.resolve(__dirname, "src/apps/index.js"),
@@ -76,9 +80,9 @@ module.exports = {
             ],
         }),
         new ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery', 
+            u: 'umbrellajs',
+            Promise: ['promise-polyfill', 'default'],
+            fetch: ['whatwg-fetch', 'fetch'] 
         }),
 
         ...pugPages.map((file) => {       
