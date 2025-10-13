@@ -1,6 +1,3 @@
-import 'core-js/stable'
-import 'regenerator-runtime/runtime'
-
 import Home from './home';
 import Contact from './contact';
 import barba from '@barba/core';
@@ -14,10 +11,9 @@ class App{
                 home : new Home(),
                 contact : new Contact()
             }
+                
             this.createAjaxNavigation()
             this.createReRender()
-        
-        
     }
     createAjaxNavigation(){
        const easeIn = (container,done)=> {
@@ -69,4 +65,7 @@ class App{
 
 }
 
-new App()
+$(function(){
+    new App()
+})
+

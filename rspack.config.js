@@ -1,5 +1,3 @@
-
-
 const glob = require('glob')
 const path =  require('path')
 const {rspack ,ProvidePlugin}  = require('@rspack/core')
@@ -80,9 +78,9 @@ module.exports = {
             ],
         }),
         new ProvidePlugin({
-            u: 'umbrellajs',
-            Promise: ['promise-polyfill', 'default'],
-            fetch: ['whatwg-fetch', 'fetch'] 
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
         }),
 
         ...pugPages.map((file) => {       
