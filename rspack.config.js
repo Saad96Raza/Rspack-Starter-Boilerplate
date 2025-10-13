@@ -7,7 +7,7 @@ const pugPages = glob.sync('src/views/pages/*.pug')
 
 module.exports = {
     mode:'development',
-    entry : path.resolve(__dirname, "src/apps/index.js"),
+    entry : path.resolve(__dirname, "src/apps/index.ts"),
     output :{
         path : path.resolve(__dirname,'dist'),
         filename:'js/[name].bundle.js',
@@ -32,7 +32,7 @@ module.exports = {
     module:{
         rules:[
             {
-                test: /\.(?:js|mjs|cjs)$/,
+                test: /\.(?:js|mjs|cjs|ts)$/,
                 exclude: /node_modules/,
                 use: 'builtin:swc-loader'
             },
@@ -65,6 +65,9 @@ module.exports = {
                 }
             }
         ]
+    },
+    resolve: {
+        extensions: ['.ts', '.js', '.mjs', '.cjs'], 
     },
     plugins: [
 
