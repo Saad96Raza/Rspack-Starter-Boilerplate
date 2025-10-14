@@ -6,7 +6,7 @@ import { Fluid } from './src/apps/extra/math'
 import daisyui from 'daisyui'
 
 module.exports = {
-  content: ["./src/**/*.{html,js,pug}"],
+  content: ["./src/**/*.{html,ts,pug}"],
   theme: {
     container: {
       center: true,
