@@ -4,7 +4,6 @@ const {rspack ,ProvidePlugin}  = require('@rspack/core')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const pugPages = glob.sync('src/views/pages/*.pug')
 
-
 module.exports = {
     mode:'development',
     entry : path.resolve(__dirname, "src/apps/index.ts"),
@@ -32,9 +31,13 @@ module.exports = {
     module:{
         rules:[
             {
-                test: /\.(?:js|mjs|cjs|ts)$/,
+                test:  /\.tsx?$/,
                 exclude: /node_modules/,
-                use: 'builtin:swc-loader'
+                loader: 'builtin:swc-loader',
+                options: {
+                loader: 'tsx',      
+                    target: 'es2020',  
+                },
             },
             {
                 test: /\.(sa|sc|c)ss$/,
@@ -67,7 +70,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.ts', '.js', '.mjs', '.cjs'], 
+        extensions: ['.ts', '.tsx'],
     },
     plugins: [
 

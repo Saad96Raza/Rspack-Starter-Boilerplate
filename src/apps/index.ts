@@ -1,9 +1,9 @@
+import barba from '@barba/core'
 import Home from './home';
 import Contact from './contact';
 import GSAP from 'gsap'
 import  '../scss/main.scss';
 
-const barba = require('@barba/core');
 
 class App{
     private pages: Record<string,any> = {
@@ -19,7 +19,7 @@ class App{
     }
     private createAjaxNavigation(){
        const easeIn = (container:HTMLElement,done:()=> void)=> {
-            return GSAP.to(container, {
+            return GSAP.to(container,{
                 autoAlpha: 0,
                 duration: 1,
                 ease: 'none',
