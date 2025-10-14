@@ -1,9 +1,9 @@
 import Home from './home';
 import Contact from './contact';
-import barba from '@barba/core';
 import GSAP from 'gsap'
 import  '../scss/main.scss';
 
+const barba = require('@barba/core');
 
 class App{
     private pages: Record<string,any> = {
@@ -28,16 +28,13 @@ class App{
                 }
             })
         }
-
         const  easeOut = (container:HTMLElement ) => {
-
             return GSAP.from(container, {
                 autoAlpha: 0,
                 duration: 1,
                 ease: 'none',
             })
         }
-
         (barba as any).init({
                 transitions: [
                 {
